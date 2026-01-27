@@ -1,0 +1,20 @@
+.pc-only {
+    display: block;
+}
+
+.sp-only {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .pc-only {
+        display: none;
+    }
+    .sp-only {
+        display: block;
+    }
+}
+
+.c_category {
+    text-align: center;
+}

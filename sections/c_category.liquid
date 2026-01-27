@@ -1,0 +1,166 @@
+{%- comment -%}
+  進捗: タイトルのCSSは調整済み
+  次回やること: c_category-grid以降のCSSを調整する
+  確認すること:
+  1 タイトルのfont-familyをOswaldで固定する
+{%- endcomment -%}
+
+{{ 'c_category.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: calc({{ section.settings.padding_top_sp }}px * 0.75);
+    padding-bottom: calc({{ section.settings.padding_bottom_sp }}px  * 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="c_category">
+    <div class="c_section-head c_category-head">
+      {% render 'c_section-title', title: section.settings.title %}
+    </div>
+
+    <div class="c_category-grid">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if block.settings.url != blank %}
+          <a
+          href="{{ collection.url }}"
+          class="c_category-item"
+        >
+        {% endif %}
+          {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | image_url: width: 1200 }}"
+              alt="{{ block.settings.category_name }}"
+              class="c_category-image pc-only"
+            >
+          {% endif %}
+          {% if block.settings.image_sp != blank %}
+            <img
+              src="{{ block.settings.image_sp | image_url: width: 800 }}"
+              alt="{{ block.settings.category_name }}"
+              class="c_category-image sp-only"
+            >
+          {% else %}
+            <img
+              src="{{ block.settings.image | image_url: width: 1200 }}"
+              alt="{{ block.settings.category_name }}"
+              class="c_category-image sp-only"
+            >
+          {% endif %}
+          <div class="c_category-overlay">
+            <h3 class="c_category-name">{{ block.settings.category_name }}</h3>
+          </div>
+        {% if block.settings.url != blank %}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "カスタム:カテゴリー",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "見出し",
+      "default": "見出し"
+    },
+    {
+      "type": "header",
+      "content": "デスクトップ"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "上の余白",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "下の余白",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "モバイル"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "label": "上の余白",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "label": "下の余白",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "カテゴリー項目",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "リンク先コレクション"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像(PC)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_sp",
+          "label": "画像(SP)"
+        },
+        {
+          "type": "text",
+          "id": "category_name",
+          "label": "カテゴリー名",
+          "default": "カテゴリー名を入力"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "カスタム:カテゴリー",
+      "category": "コレクション"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,236 @@
+{
+  "article": [],
+  "blog": [],
+  "collection": [
+    {
+      "key": "title_sub",
+      "namespace": "custom",
+      "name": "サブタイトル",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "fv_sp",
+      "namespace": "custom",
+      "name": "メインビュー（SP）",
+      "description": "",
+      "type": {
+        "name": "file_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [],
+  "page": [],
+  "product": [
+    {
+      "key": "size",
+      "namespace": "custom",
+      "name": "寸法",
+      "description": "",
+      "type": {
+        "name": "list.dimension",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "weight",
+      "namespace": "custom",
+      "name": "重量",
+      "description": "",
+      "type": {
+        "name": "list.weight",
+        "category": "MEASUREMENT"
+      }
+    },
+    {
+      "key": "connection",
+      "namespace": "custom",
+      "name": "接続方式",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "usage-time",
+      "namespace": "custom",
+      "name": "連続使用時間",
+      "description": "",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "色",
+      "description": "青やストライプなど、主な色やパターンを定義",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "connectivity-technology",
+      "namespace": "shopify",
+      "name": "接続技術",
+      "description": "商品内のデータ転送方法を定義（例：Bluetooth、USB）",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "audio-connectivity",
+      "namespace": "shopify",
+      "name": "オーディオ接続",
+      "description": "商品がサポートするオーディオ接続の種類を定義(HDMIやUSBなど)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "headphone-style",
+      "namespace": "shopify",
+      "name": "ヘッドフォンのスタイル",
+      "description": "ヘッドホンのデザインを定義します（例：ビハインド・ザ・ネック、イヤープラグ）",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "microphone-type",
+      "namespace": "shopify",
+      "name": "マイクの種類",
+      "description": "使用するマイクのテクノロジーを定義(コンデンサーやダイナミックなど)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "earphone-features",
+      "namespace": "shopify",
+      "name": "イヤホンの機能",
+      "description": "内蔵マイクや音量調節など、イヤホン独自の機能を強調します。",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "power-source",
+      "namespace": "shopify",
+      "name": "電源",
+      "description": "商品の動作に使用する電源を指定（太陽光や電池など）",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "mounting-type",
+      "namespace": "shopify",
+      "name": "取付タイプ",
+      "description": "商品の取り付け方法を指定(クリップ式や吸盤式など)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "audio-purpose",
+      "namespace": "shopify",
+      "name": "オーディオの用途",
+      "description": "オーディオ商品の用途や設置場所を指定(カーオーディオやホームシネマなど)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "speaker-design",
+      "namespace": "shopify",
+      "name": "スピーカーの設計",
+      "description": "スピーカーの物理的および機能的なデザインを定義(サブウーファーやタワーなど)",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "speaker-technology",
+      "namespace": "shopify",
+      "name": "スピーカー技術",
+      "description": "スピーカーの設計に使用されているテクノロジーを定義（例：ダイナミック、静電）",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "speaker-features",
+      "namespace": "shopify",
+      "name": "スピーカーの機能",
+      "description": "ノイズキャンセリングや音声コントロールなど、オーディオスピーカーの特殊機能を識別する",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "comparison",
+      "namespace": "custom",
+      "name": "比較表",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "feature",
+      "namespace": "custom",
+      "name": "製品の特徴",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "recommend",
+      "namespace": "custom",
+      "name": "おすすめ",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "function",
+      "namespace": "custom",
+      "name": "機能紹介",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "variant": [],
+  "shop": []
+}
