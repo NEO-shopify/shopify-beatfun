@@ -1,6 +1,20 @@
-.c_header__menu-item--level1 {
+.list-menu__item {
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
   font-weight: 500;
+  font-size: 24px;
   letter-spacing: 0.08em;
+}
+
+.header__icons {
+  padding-right: 0;
+}
+
+.header__icon .svg-wrapper {
+  width: auto;
+  height: auto;
+}
+
+.header__icon--cart {
+  padding-right: 0;
 }
