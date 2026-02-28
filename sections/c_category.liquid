@@ -27,41 +27,49 @@
       {% render 'c_section-title', title: section.settings.title %}
     </div>
 
-    <div class="c_category-grid">
+    {%- assign block_count = section.blocks | size -%}
+    <div
+      class="c_category-grid"
+      data-count="{{ block_count }}"
+    >
       {% for block in section.blocks %}
-        {% assign collection = block.settings.collection %}
-        {% if block.settings.url != blank %}
-          <a
-          href="{{ collection.url }}"
+        {%- assign collection = block.settings.collection -%}
+        {%- assign href = collection.url | default: '#' -%}
+
+          <a href="{{ href }}"
           class="c_category-item"
+          data-index="{{ forloop.index }}"
+          {{ block.shopify_attributes }}
         >
-        {% endif %}
-          {% if block.settings.image != blank %}
+          {%- if block.settings.image != blank -%}
             <img
               src="{{ block.settings.image | image_url: width: 1200 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image pc-only"
+              loading="lazy"
             >
-          {% endif %}
-          {% if block.settings.image_sp != blank %}
+          {%- endif -%}
+
+          {%- if block.settings.image_sp != blank -%}
             <img
               src="{{ block.settings.image_sp | image_url: width: 800 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image sp-only"
+              loading="lazy"
             >
-          {% else %}
+          {%- elsif block.settings.image != blank -%}
             <img
-              src="{{ block.settings.image | image_url: width: 1200 }}"
+              src="{{ block.settings.image | image_url: width: 800 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image sp-only"
+              loading="lazy"
             >
-          {% endif %}
+          {%- endif -%}
+
           <div class="c_category-overlay">
             <h3 class="c_category-name">{{ block.settings.category_name }}</h3>
           </div>
-        {% if block.settings.url != blank %}
         </a>
-        {% endif %}
       {% endfor %}
     </div>
   </div>
