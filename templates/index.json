@@ -74,10 +74,50 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "c_category_b7b6nD": {
+      "type": "c_category",
+      "blocks": {
+        "collection_block_BWkEdQ": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "category_name": "カテゴリー名を入力"
+          }
+        },
+        "collection_block_wNALcF": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "category_name": "カテゴリー名を入力"
+          }
+        },
+        "collection_block_MgkYxT": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "category_name": "カテゴリー名を入力"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_BWkEdQ",
+        "collection_block_wNALcF",
+        "collection_block_MgkYxT"
+      ],
+      "name": "カスタム:カテゴリー",
+      "settings": {
+        "title": "見出し",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_sp": 80,
+        "padding_bottom_sp": 80
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_blog_ikL7f7"
+    "featured_blog_ikL7f7",
+    "c_category_b7b6nD"
   ]
 }
