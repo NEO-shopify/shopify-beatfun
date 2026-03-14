@@ -1,16 +1,18 @@
 {%- comment -%}
-  進捗: gridが未完成
-  次回やること:grid内でカテゴリごとのgrid-rowをノーコードで調整できるような設定項目を追加する
-  確認すること:
-  1 タイトルのfont-familyをOswaldで固定する
+  Figma仕様に合わせて修正済み（2026-03-14）
+  ・3件グリッド: aspect-ratio 12/7 + 4fr/3fr 行比率
+  ・オーバーレイ: #3A3E5B 20%透過
+  ・フォント: Oswald Medium 60px(PC) / 48px(SP)
+  ・タイトル: Oswald Bold 64px(PC) / 40px(SP)、色 #2c2c2c
+  ・SP: item1=400px, item2-N=300px
 {%- endcomment -%}
 
 {{ 'c_category.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: calc({{ section.settings.padding_top_sp }}px * 0.75);
-    padding-bottom: calc({{ section.settings.padding_bottom_sp }}px  * 0.75);
+    padding-top: {{ section.settings.padding_top_sp }}px;
+    padding-bottom: {{ section.settings.padding_bottom_sp }}px;
   }
 
   @media screen and (min-width: 750px) {
@@ -22,46 +24,55 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
-  <div class="c_category">
+  <div class="c_category page-width">
     <div class="c_section-head c_category-head">
       {% render 'c_section-title', title: section.settings.title %}
     </div>
 
-    <div class="c_category-grid">
+    {%- assign block_count = section.blocks | size -%}
+    <div
+      class="c_category-grid"
+      data-count="{{ block_count }}"
+    >
       {% for block in section.blocks %}
-        {% assign collection = block.settings.collection %}
-        {% if block.settings.url != blank %}
-          <a
-          href="{{ collection.url }}"
+        {%- assign collection = block.settings.collection -%}
+        {%- assign href = collection.url | default: '#' -%}
+
+          <a href="{{ href }}"
           class="c_category-item"
+          data-index="{{ forloop.index }}"
+          {{ block.shopify_attributes }}
         >
-        {% endif %}
-          {% if block.settings.image != blank %}
+          {%- if block.settings.image != blank -%}
             <img
               src="{{ block.settings.image | image_url: width: 1200 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image pc-only"
+              loading="lazy"
             >
-          {% endif %}
-          {% if block.settings.image_sp != blank %}
+          {%- endif -%}
+
+          {%- if block.settings.image_sp != blank -%}
             <img
               src="{{ block.settings.image_sp | image_url: width: 800 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image sp-only"
+              loading="lazy"
             >
-          {% else %}
+          {%- elsif block.settings.image != blank -%}
             <img
-              src="{{ block.settings.image | image_url: width: 1200 }}"
+              src="{{ block.settings.image | image_url: width: 800 }}"
               alt="{{ block.settings.category_name }}"
               class="c_category-image sp-only"
+              loading="lazy"
             >
-          {% endif %}
+          {%- endif -%}
+
+          <div class="c_category-overlay-bg" aria-hidden="true"></div>
           <div class="c_category-overlay">
             <h3 class="c_category-name">{{ block.settings.category_name }}</h3>
           </div>
-        {% if block.settings.url != blank %}
         </a>
-        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -89,7 +100,7 @@
       "min": 0,
       "max": 100,
       "step": 2,
-      "default": 0
+      "default": 80
     },
     {
       "type": "range",
@@ -99,7 +110,7 @@
       "min": 0,
       "max": 100,
       "step": 2,
-      "default": 0
+      "default": 80
     },
     {
       "type": "header",
@@ -113,7 +124,7 @@
       "min": 0,
       "max": 100,
       "step": 2,
-      "default": 0
+      "default": 80
     },
     {
       "type": "range",
@@ -123,7 +134,7 @@
       "min": 0,
       "max": 100,
       "step": 2,
-      "default": 0
+      "default": 40
     }
   ],
   "blocks": [
