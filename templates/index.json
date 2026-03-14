@@ -72,8 +72,10 @@
         "collection_block_wNALcF": {
           "type": "collection_block",
           "settings": {
-            "collection": "",
-            "category_name": "カテゴリー名を入力"
+            "collection": "headphones",
+            "image": "shopify://shop_images/Frame_6356999.jpg",
+            "image_sp": "shopify://shop_images/Frame_6356999.jpg",
+            "category_name": "headphone"
           }
         },
         "collection_block_MgkYxT": {
