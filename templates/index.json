@@ -66,7 +66,7 @@
             "collection": "wireless-earphones",
             "image": "shopify://shop_images/Frame_6356998.jpg",
             "image_sp": "shopify://shop_images/Frame_6356998.jpg",
-            "category_name": "wireless earphone"
+            "category_name": "wireless earphones"
           }
         },
         "collection_block_wNALcF": {
@@ -81,8 +81,10 @@
         "collection_block_MgkYxT": {
           "type": "collection_block",
           "settings": {
-            "collection": "",
-            "category_name": "カテゴリー名を入力"
+            "collection": "home-speaker",
+            "image": "shopify://shop_images/Frame_6357000.jpg",
+            "image_sp": "shopify://shop_images/Frame_6357000.jpg",
+            "category_name": "speaker"
           }
         }
       },
