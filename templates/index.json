@@ -63,8 +63,10 @@
         "collection_block_BWkEdQ": {
           "type": "collection_block",
           "settings": {
-            "collection": "",
-            "category_name": "カテゴリー名を入力"
+            "collection": "wireless-earphones",
+            "image": "shopify://shop_images/Frame_6356998.jpg",
+            "image_sp": "shopify://shop_images/Frame_6356998.jpg",
+            "category_name": "wireless earphone"
           }
         },
         "collection_block_wNALcF": {
@@ -89,7 +91,7 @@
       ],
       "name": "カスタム:カテゴリー",
       "settings": {
-        "title": "見出し",
+        "title": "",
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_sp": 80,
