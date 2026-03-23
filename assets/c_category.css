@@ -151,6 +151,12 @@
 }
 
 @media screen and (min-width: 750px) {
+  /* 3件レイアウト：1枚目（大カード）のテキストを下寄せ */
+  .c_category-grid[data-count="3"] .c_category-item:first-child .c_category-overlay {
+    align-items: flex-end;
+    padding-bottom: 80px;
+  }
+
   .c_category-name {
     font-size: 60px;
   }
